@@ -56,7 +56,7 @@ ifdef SEEDS
 endif
 
 launch:
-	@ansible-playbook -i inventory/hosts -e '$(TARGET_OPTS) $(SERVICE_NAME_OPTS) $(CHAIN_ID_OPTS) image=$(IMAGE) $(REPLICAS_OPTS) service_type=$(SERVICE_TYPE) $(RESTORE_OPTS) $(SNAPSHOT_OPTS) $(ADDRESS_BOOK_OPTS) $(NODE_OPTS) $(DB_BACKEND_OPTS) $(DD_OPTS) $(SEEDS_OPTS) $(PERSISTENT_PEERS_OPTS)' $(TARGET_HOST_OPTS) launch.yml
+	@ansible-playbook -i inventory/hosts -e '$(TARGET_OPTS) $(SERVICE_NAME_OPTS) $(CHAIN_ID_OPTS) image=$(IMAGE) $(REPLICAS_OPTS) service_type=$(SERVICE_TYPE) $(RESTORE_OPTS) $(SNAPSHOT_OPTS) $(ADDRESS_BOOK_OPTS) $(NODE_OPTS) $(DB_BACKEND_OPTS) $(DD_OPTS) $(SEEDS_OPTS) $(PERSISTENT_PEERS_OPTS)' $(TARGET_HOST_OPTS) playbooks/launch.yml
 
 upgrade:
-	@ansible-playbook -i inventory/hosts -e '$(TARGET_OPTS) $(SERVICE_NAME_OPTS) image=$(IMAGE) $(REPLICAS_OPTS) service_type=$(SERVICE_TYPE) $(NODE_OPTS) $(DB_BACKEND_OPTS) $(DD_OPTS)' $(TARGET_HOST_OPTS) upgrade.yml
+	@ansible-playbook -i inventory/hosts -e '$(TARGET_OPTS) $(SERVICE_NAME_OPTS) image=$(IMAGE) $(REPLICAS_OPTS) service_type=$(SERVICE_TYPE) $(NODE_OPTS) $(DB_BACKEND_OPTS) $(DD_OPTS)' $(TARGET_HOST_OPTS) playbooks/upgrade.yml
